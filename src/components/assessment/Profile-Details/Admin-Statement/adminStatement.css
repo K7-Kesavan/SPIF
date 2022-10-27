@@ -5,12 +5,13 @@
 .admin-statement{
     background: linear-gradient(to right, rgb(240, 235, 235), rgb(247, 244, 244));
     padding: 20px;
+    font-family: 'Times New Roman', Times, serif;
 }
 .admin-statement .header{
     background: linear-gradient(to right, rgba(255, 255, 255, 0.726), rgba(236, 229, 229, 0.267));
     margin: 10px 0;
 }
-.admin-statement .header h3{
+.admin-statement .header h1{
     color: rgb(45, 45, 150);
     padding: 10px;
     margin: 10px 0;
@@ -43,5 +44,7 @@
 .create-question-header, .create-option-header{
     color: rgb(45, 45, 150);
 }
-
+.adding-btn{
+    border-radius: 30%;
+}
 

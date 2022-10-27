@@ -125,8 +125,8 @@ export default function CustomPaginationActionsTable( {questions, totalQuestions
             color: "white"
             }}}
           >
-            <TableCell component="th" scope="row" align="center" sx={{ borderRight :"1px solid gray" }} > QUESTIONS </TableCell>
-            <TableCell style={{ width: 160 }} align="center">ACTION</TableCell>
+            <TableCell component="th" scope="row" align="center" style={{ fontSize:"25px", fontWeight:"bolder", letterSpacing:"2px", opacity:0.9 }} sx={{ borderRight :"1px solid gray", fontSize:30 }} > QUESTIONS </TableCell>
+            <TableCell style={{ width: 160, fontSize:"25px", fontWeight:"bolder", letterSpacing:"2px", opacity:0.9 }} align="center">ACTION</TableCell>
           </TableRow>
         </TableHead>
         <TableBody
@@ -150,13 +150,14 @@ export default function CustomPaginationActionsTable( {questions, totalQuestions
                   <Button variant='contained' onClick={handleClickOpen} style={{ width: "30%" }} > <EditIcon/> </Button>
                   <Button variant='contained' style={{ width: "30%" }} > <DeleteIcon/> </Button>
 
-                <Dialog 
-                  open={open} 
-                  onClose={handleClose} 
-                  className='dialog-box'
-                  
-                  // style={ { backgroundColor:'gray' }}
-                >
+                  <Dialog  
+                        PaperProps={{
+                          style: { borderRadius: 20, padding:10 }
+                                    }} 
+                        open={open} 
+                        onClose={handleClose} 
+                        className='dialog-box'
+                  >
                             <DialogTitle component="h1" className='create-question-header'>
                                 Question Details:
                             </DialogTitle>

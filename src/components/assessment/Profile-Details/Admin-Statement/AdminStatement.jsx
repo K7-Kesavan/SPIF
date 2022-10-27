@@ -29,23 +29,30 @@ const AdminStatement = () => {
     return (
         <div className='container admin-statement p-4'>
             <div className='row'>
-                <div className='header p-4'>
-                    <h3>Question</h3>
+                <div  className='header p-4' >
+                    <h1 style={{ fontWeight:"bolder", letterSpacing:"1px" }}>Questions</h1>
                 </div>
                 <div className='col-md-12 p-4 question-container'>
                     <div className='d-flex adding-part'>
-                        <h3>To Create New Question</h3>
+                        <h3 style={{ fontSize:"25px", fontWeight:"bolder", letterSpacing:"1px", opacity:0.8 }}>To Create New Question</h3>
                         <Tooltip 
                             title="To Add New Question" 
                             placement="right"
                         >
-                            <Button variant="contained" color='primary' onClick={handleClickOpen}>  
+                            <Button style={{ borderRadius:"40%" }} variant="contained" color='primary' onClick={handleClickOpen}>  
                                 <IconButton>
                                     <AddCircleOutlineIcon fontSize='large' color='light' />
                                 </IconButton>  
                             </Button>
                         </Tooltip>
-                        <Dialog open={open} onClose={handleClose} className='dialog-box'>
+                        <Dialog  
+                            PaperProps={{
+                                        style: { borderRadius: 20, padding:10 }
+                                    }} 
+                            open={open} 
+                            onClose={handleClose} 
+                            className='dialog-box'
+                        >
                             <DialogTitle component="h1" className='create-question-header'>
                                 Question Details:
                             </DialogTitle>
