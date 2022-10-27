@@ -1,0 +1,16 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+.test-result{
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center ;
+
+}
+.test-card{
+    width: 50%;
+    padding: 10px;
+}

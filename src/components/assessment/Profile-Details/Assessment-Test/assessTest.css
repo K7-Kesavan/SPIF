@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Alumni+Sans+Inline+One&family=Noto+Serif&family=Playfair+Display&family=Roboto&family=Rubik+Dirt&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.assessment-test{
+    width: 100%;
+    display: grid;
+    justify-content: center;
+    padding: 0%;
+}
+.assessment-test .header{
+    background-color: rgba(24, 54, 151, 0.527);
+    color: aliceblue;
+    padding: 10px 0;
+    height: 100px;
+    width: 100%;
+    
+}
+.assessment-test .header h1{
+    text-align: center;
+    font-weight: bolder;
+}
+.assessment-test .header .pageNo-Timer{
+    display: flex;
+    justify-content: space-around;
+}
+.question-form{
+    position: relative;
+}
+.question-form .btn{
+    position: absolute;
+    bottom: 0%;
+}
+.question{
+    width: 1200px;
+    text-align: start;
+}
+.question span{
+    padding: 3px 10px;
+    margin-right: 10px;
+    color: rgb(90, 121, 148);
+    text-align: center;
+}
+.question-options{
+    display: grid;
+    grid-template-columns: 30px 1000px;
+    justify-content: start;
+    margin: 30px 70px;
+    font-size: x-large;
+}
+.question-options input{
+    font-size: 10px;
+    margin-right: 10px;
+}
+.questionWithOption{
+    display: grid;
+    width: auto;
+    padding: 20px;
+    margin-top: 30px;
+    -webkit-box-shadow: 3px 3px 5px 4px rgba(153,137,153,1);
+    -moz-box-shadow: 3px 3px 5px 4px rgba(153,137,153,1);
+    box-shadow: 3px 3px 5px 4px rgba(153,137,153,1);
+    height: 700px;
+    position: relative;
+}
+.question-form{
+    position: static;
+}
+.question-form .btn{
+    width: 200px;
+    font-size: x-large;
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+}
+.multi-q-details p{
+    font-size: larger;
+}
+.question-options .option-popper{
+    background-color: rgb(57, 87, 114);
+    width: 200px;
+    box-shadow: 6px 7px 5px 0px rgba(130,108,108,0.66);
+    -webkit-box-shadow: 6px 7px 5px 0px rgba(130,108,108,0.66);
+    -moz-box-shadow: 6px 7px 5px 0px rgba(130,108,108,0.66);
+}
