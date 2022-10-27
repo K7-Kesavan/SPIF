@@ -19,7 +19,7 @@
     align-items: center; 
     width: 1300px;
     height: 700px;
-    webkit-box-shadow: 1px 4px 6px 6px rgba(199,183,199,1);
+    -webkit-box-shadow: 1px 4px 6px 6px rgba(199,183,199,1);
     -moz-box-shadow: 1px 4px 6px 6px rgba(199,183,199,1);
     box-shadow: 1px 4px 6px 6px rgba(199,183,199,1);
 }
