@@ -25,7 +25,7 @@ const TermsConditions = () => {
 
           <div className='test-rule-list'>
 
-            <h4>Rules: 1</h4>
+            <h4>Rules:</h4>
 
             <ol>
                 <li>Every Questions gives you some points</li>

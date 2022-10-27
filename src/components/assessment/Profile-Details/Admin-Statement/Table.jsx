@@ -129,6 +129,9 @@ export default function CustomPaginationActionsTable( {questions, totalQuestions
             <TableCell style={{ width: 160, fontSize:"25px", fontWeight:"bolder", letterSpacing:"2px", opacity:0.9 }} align="center">ACTION</TableCell>
           </TableRow>
         </TableHead>
+
+      {/* Fetching questions to the table  */}
+
         <TableBody
             sx={{
                 borderBottom: "1px solid black",
