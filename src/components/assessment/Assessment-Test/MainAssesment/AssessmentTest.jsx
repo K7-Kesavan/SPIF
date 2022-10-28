@@ -4,7 +4,7 @@ import { useState } from "react";
 // import { useEffect } from "react";
 import './assessTest.css'
 import Questions from "./Questions";
-import Pagination from "./PaginationFile/Pagination";
+import Pagination from "../PaginationFile/Pagination";
 import Timer from "./Timer";
 import useFetch from "../../../Custom Hook/useFetch";
 // import ReactPaginate from 'react-paginate'

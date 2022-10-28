@@ -2,12 +2,12 @@ import React from 'react';
 // import ReactDOM from 'react';
 // import MaterialLayout from './components/Layout/MaterialLayout';
 // import CheckoutPage from './components/CheckoutPage';
-import TermsConditions from './components/assessment/Profile-Details/Assessment-Test/Terms & Condions/Terms_Conditions';
+import TermsConditions from './components/assessment/Assessment-Test/Terms & Condions/Terms_Conditions';
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
-import AssessmentTest from './components/assessment/Profile-Details/Assessment-Test/AssessmentTest';
-import TestResult from './components/assessment/Profile-Details/Assessment-Test/TestCompletionPage/TestResult/TestResult';
-import AdminStatement from './components/assessment/Profile-Details/Admin-Statement/AdminStatement';
-import CertificationPage from './components/assessment/Profile-Details/Assessment-Test/TestCompletionPage/Certification/CertificationPage';
+import AssessmentTest from './components/assessment/Assessment-Test/MainAssesment/AssessmentTest';
+import TestResult from './components/assessment/Assessment-Test/TestCompletionPage/TestResult/TestResult';
+import AdminStatement from './components/assessment/Admin-Statement/AdminStatement';
+import CertificationPage from './components/assessment/Assessment-Test/TestCompletionPage/Certification/CertificationPage';
 
 
 function App() {
