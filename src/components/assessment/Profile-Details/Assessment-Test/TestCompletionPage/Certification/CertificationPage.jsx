@@ -2,15 +2,19 @@ import React from 'react'
 import Tooltip from '@mui/material/Tooltip';
 import { Button } from '@material-ui/core';
 import {saveAs} from 'file-saver'
+import { useNavigate } from 'react-router-dom';
 
 const CertificationPage = () => {
+
+    let navigate = useNavigate();
 
 //    To Download image ----Have to install package
 //           npm install file-saver --save
 //    Then have to import "saveAs" funtion from file-saver
 
     const downloadImage = () => {
-          saveAs('image_url', 'Creative Photography Participation Certificate Template-1.jpeg') // Put your image url here.
+        saveAs('image_url', 'Creative Photography Participation Certificate Template-1.jpeg'); // Put your image url here.
+        navigate('/')
     }
     
 

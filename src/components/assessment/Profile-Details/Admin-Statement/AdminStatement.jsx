@@ -1,12 +1,13 @@
 import React from 'react'
 import './adminStatement.css'
-import { Button, TextField, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, TextareaAutosize, Typography } from '@material-ui/core'
+import { Button, TextField, Dialog, DialogActions, DialogContent, DialogTitle, TextareaAutosize, Typography } from '@material-ui/core'
 import { useState } from 'react';
 import CustomPaginationActionsTable from './Table';
 import useFetch from '../../../Custom Hook/useFetch';
 import IconButton from '@mui/material/IconButton';
 import Tooltip from '@mui/material/Tooltip';
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
+import CircularProgress from '@mui/material/CircularProgress';
 
 
 
@@ -24,7 +25,7 @@ const AdminStatement = () => {
         setOpen(false);
     };
 
-    if(!questions) return "No Question!"
+    if(!questions) return <CircularProgress size="5rem" style={{ display:"flex", margin:"auto" }}/>
 
     return (
         <div className='container admin-statement p-4'>
@@ -39,7 +40,7 @@ const AdminStatement = () => {
                             title="To Add New Question" 
                             placement="right"
                         >
-                            <Button style={{ borderRadius:"50%", width:"50px" }} variant="contained" color='primary' onClick={handleClickOpen}>  
+                            <Button style={{ borderRadius:"50%", width:"70px", height:"70px" }} variant="contained" color='primary' onClick={handleClickOpen}>  
                                 <IconButton>
                                     <AddCircleOutlineIcon fontSize='large' style={{ color:"white" }}  />
                                 </IconButton>  
