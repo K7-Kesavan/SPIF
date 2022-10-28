@@ -5,9 +5,9 @@ import React from 'react';
 import TermsConditions from './components/assessment/Profile-Details/Assessment-Test/Terms & Condions/Terms_Conditions';
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
 import AssessmentTest from './components/assessment/Profile-Details/Assessment-Test/AssessmentTest';
-import TestResult from './components/assessment/Profile-Details/Assessment-Test/TestCompletionPage/TestResult';
+import TestResult from './components/assessment/Profile-Details/Assessment-Test/TestCompletionPage/TestResult/TestResult';
 import AdminStatement from './components/assessment/Profile-Details/Admin-Statement/AdminStatement';
-import CertificationPage from './components/assessment/Profile-Details/Assessment-Test/TestCompletionPage/CertificationPage';
+import CertificationPage from './components/assessment/Profile-Details/Assessment-Test/TestCompletionPage/Certification/CertificationPage';
 
 
 function App() {
