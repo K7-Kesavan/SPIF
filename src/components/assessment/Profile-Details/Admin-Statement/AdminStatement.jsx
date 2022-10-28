@@ -39,9 +39,9 @@ const AdminStatement = () => {
                             title="To Add New Question" 
                             placement="right"
                         >
-                            <Button style={{ borderRadius:"40%" }} variant="contained" color='primary' onClick={handleClickOpen}>  
+                            <Button style={{ borderRadius:"50%", width:"50px" }} variant="contained" color='primary' onClick={handleClickOpen}>  
                                 <IconButton>
-                                    <AddCircleOutlineIcon fontSize='large' color='light' />
+                                    <AddCircleOutlineIcon fontSize='large' style={{ color:"white" }}  />
                                 </IconButton>  
                             </Button>
                         </Tooltip>
