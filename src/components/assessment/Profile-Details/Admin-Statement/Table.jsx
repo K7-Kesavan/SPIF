@@ -136,7 +136,7 @@ export default function CustomPaginationActionsTable( {questions, totalQuestions
             sx={{
                 borderBottom: "1px solid black",
                 "& th": {
-                fontSize: "1.2rem",
+                fontSize: "1.1rem",
                 color: "black"
                 }}}
         >
