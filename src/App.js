@@ -7,6 +7,7 @@ import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
 import AssessmentTest from './components/assessment/Profile-Details/Assessment-Test/AssessmentTest';
 import TestResult from './components/assessment/Profile-Details/Assessment-Test/TestCompletionPage/TestResult';
 import AdminStatement from './components/assessment/Profile-Details/Admin-Statement/AdminStatement';
+import CertificationPage from './components/assessment/Profile-Details/Assessment-Test/TestCompletionPage/CertificationPage';
 
 
 function App() {
@@ -24,6 +25,8 @@ function App() {
           <Route path='assessment-test' element={<AssessmentTest/>} />
 
           <Route path='test-result' element={ <TestResult/> } />
+
+          <Route path='certification-page' element={ <CertificationPage/> } />
           
         </Routes>
       </Router>

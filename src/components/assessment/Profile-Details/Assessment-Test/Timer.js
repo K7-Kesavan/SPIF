@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom';
 
 const Timer = () => {
 
     const[seconds,setSeconds] = useState(0);
     const[minutes,setMinutes] = useState(0);
 
+    const navigate = useNavigate();
 
     useEffect(()=>{
         var timer = setInterval(()=>{
@@ -24,10 +26,15 @@ const Timer = () => {
     let mins = (minutes < 10 ? '0' : '') + minutes;
     let secs = (seconds < 10 ? '0' : '') + seconds;
 
+    if (minutes===10) {
+        navigate('/test-result');
+    }
+
   return (
     <div className='timer'>
         <div className='container'>
-            <h3> {mins}:{secs} / 10:00</h3>            
+            <h3> {mins}:{secs} / 10:00</h3>
+                       
         </div>
     </div>
   )

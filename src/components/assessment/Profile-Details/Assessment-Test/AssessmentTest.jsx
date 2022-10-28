@@ -1,13 +1,15 @@
 import React from "react";
-import axios from "axios";
+// import axios from "axios";
 import { useState } from "react";
-import { useEffect } from "react";
+// import { useEffect } from "react";
 import './assessTest.css'
 import Questions from "./Questions";
 import Pagination from "./PaginationFile/Pagination";
 import Timer from "./Timer";
 import useFetch from "../../../Custom Hook/useFetch";
 // import ReactPaginate from 'react-paginate'
+import CircularProgress from '@mui/material/CircularProgress';
+
 
 const AssessmentTest = () => {
 
@@ -37,7 +39,7 @@ const AssessmentTest = () => {
   //   fetchQuestions();
   // },[]);
 
-  if(!questions) return "No Question!"
+  if(!questions) return <CircularProgress size="5rem" style={{ display:"flex", margin:"auto" }}/>
 
   //Get Current Question
 

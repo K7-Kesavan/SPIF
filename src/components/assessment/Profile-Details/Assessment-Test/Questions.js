@@ -82,7 +82,17 @@ const Questions = ({ questions, loading }) => {
                         {/* When user click the wrong Answer(input)-->The Prompt will display */}
 
                         <Popper
-                           
+                          style={{ 
+                            backgroundColor:"white",
+                            borderRadius:"20px",
+                            width:"600px",
+                            color:"blue",
+                            fontWeight:"bolder",
+                            marginLeft:"420px",
+                            marginTop:"2px",
+                            boxShadow:"4px 2px 2px 2px rgba(0,0,0,0.25), -4px 2px 2px 2px rgba(0,0,0,0.25)",
+                            padding:"10px"
+                          }} 
                           open={open}
                           anchorEl={anchor}
                           // anchorOrigin ={{
@@ -92,8 +102,7 @@ const Questions = ({ questions, loading }) => {
                           // transformOrigin ={{
                           //   vertical : 'bottom',
                           //   horizontal : 'center'
-                          // }}
-                          
+                          // }}  
                         >
                           <Typography variant='h6' className='option-popper' >  {option.isPrompt} </Typography>
                         </Popper>
