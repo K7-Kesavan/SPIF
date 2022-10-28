@@ -9,12 +9,12 @@ const Questions = ({ questions, loading }) => {
 
   const [open, setOpen] = useState(false);
   // const [score, setScore] = useState(0);
-  // useEffect(()=>{
-  //   if(localStorage.getItem("item")==null)  //if wish array is not presnt before 
-  //   {
-  //       localStorage.setItem("item","[]")   //then add the wish
-  //   }
-  // },[]) 
+  useEffect(()=>{
+    if(localStorage.getItem("item")==null)  //if wish array is not presnt before 
+    {
+        localStorage.setItem("item","[]")   //then add the wish
+    }
+  },[]) 
 
   // const handleSubmit = (e) =>{
   //   e.preventDefault();
@@ -48,7 +48,11 @@ const Questions = ({ questions, loading }) => {
 
                 }
                 {
-                  question.options.map((option) => {                   
+                  question.options.map((option) => { 
+                    
+                    question.options.forEach( (x)=>{
+                      if( x.id != option.id ) x.selected = false;
+                    } )
                     
                     const openPopover = (event) =>{
                       if (option.isAnswer === false) {
@@ -65,19 +69,35 @@ const Questions = ({ questions, loading }) => {
                     };
 
                     const open = Boolean(anchor);
-                    
+
+                    // const onSelect = ( ) =>{
+
+                    //   let LinalArray = [] ;  let arrayUniqueByKey = [];
+
+                    //   LinalArray = LinalArray.push( { 'stid': question.sStatementID, 'answers': option.text } );
+
+                    //   let Key = 'stid';
+
+                    //   arrayUniqueByKey = [ ...new Map( LinalArray.map( item=> [item[Key],item])).values() ]
+
+                    //   localStorage.setItem("item", JSON.stringify(arrayUniqueByKey));
+
+                    //   localStorage.getItem("item");
+
+                    // }
 
                     return (
                       <div className="question-options">
+                        
                         <input type="radio"
                           name={question.sStatementID}
                           value={option.text}
-                          onChange={ (e)=>{setAnswers(e.target.value)} }
+                          onChange={ (e)=>{ setAnswers(e.target.value) } }
                           onClick={openPopover}
                           onClose={handleClose}
                         />
-                        
                         <label className='px-1 question-label' > {option.text} </label>
+                        
 
                         {/* When user click the wrong Answer(input)-->The Prompt will display */}
 
@@ -94,15 +114,7 @@ const Questions = ({ questions, loading }) => {
                             padding:"10px"
                           }} 
                           open={open}
-                          anchorEl={anchor}
-                          // anchorOrigin ={{
-                          //   vertical : 'top',
-                          //   horizontal : 'center'
-                          // }}
-                          // transformOrigin ={{
-                          //   vertical : 'bottom',
-                          //   horizontal : 'center'
-                          // }}  
+                          anchorEl={anchor} 
                         >
                           <Typography variant='h6' className='option-popper' >  {option.isPrompt} </Typography>
                         </Popper>
@@ -118,10 +130,6 @@ const Questions = ({ questions, loading }) => {
       <Link to='/test-result'>
         <button type="submit" class="btn btn-primary">Submit Test</button>
       </Link>
-      {/* <Link to='/assessment-test'>
-              <button onClick={{handleButton} }
-              type="button" class="btn btn-primary"> {num} </button>
-            </Link> */}
     </form>
     // </div>
   )
