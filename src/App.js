@@ -18,15 +18,15 @@ function App() {
             <CheckoutPage />
           </MaterialLayout> */}
 
-          <Route path='/' element={ <AdminStatement/>}/>
+          {/* <Route path='/' element={ <AdminStatement/>}/> */}
 
-          {/* <Route path='/' element={ <TermsConditions/>} />
+          <Route path='/' element={ <TermsConditions/>} />
 
           <Route path='assessment-test' element={<AssessmentTest/>} />
 
           <Route path='test-result' element={ <TestResult/> } />
 
-          <Route path='certification-page' element={ <CertificationPage/> } /> */}
+          <Route path='certification-page' element={ <CertificationPage/> } />
           
         </Routes>
       </Router>

@@ -30,13 +30,10 @@
 .question-form{
     position: relative;
 }
-.question-form .btn{
-    position: absolute;
-    bottom: 0%;
-}
 .question{
     width: 1200px;
     text-align: start;
+    opacity: 0.9;
 }
 .question span{
     padding: 3px 10px;
@@ -66,15 +63,22 @@
     height: 700px;
     position: relative;
 }
+.question-label{
+    opacity: 0.9;
+}
 .question-form{
     position: static;
 }
 .question-form .btn{
+    position: absolute;
     width: 200px;
     font-size: x-large;
-    position: absolute;
-    right: 20px;
+    right: 40px;
+    cursor: pointer;
     bottom: 20px;
+}
+.question-form .btn:hover{
+    cursor: pointer;
 }
 .multi-q-details p{
     font-size: larger;

@@ -116,7 +116,7 @@ const Questions = ({ questions, loading }) => {
         })
       }
       <Link to='/test-result'>
-        <button type="submit" class="btn btn-primary mt-4">Submit Test</button>
+        <button type="submit" class="btn btn-primary">Submit Test</button>
       </Link>
       {/* <Link to='/assessment-test'>
               <button onClick={{handleButton} }
