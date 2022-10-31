@@ -108,7 +108,7 @@ const Questions = ({ questions, loading }) => {
                             width:"600px",
                             color:"blue",
                             fontWeight:"bolder",
-                            marginLeft:"250px",
+                            // marginLeft:"250px",
                             marginTop:"2px",
                             boxShadow:"4px 2px 2px 2px rgba(0,0,0,0.25), -4px 2px 2px 2px rgba(0,0,0,0.25)",
                             padding:"10px"
@@ -117,6 +117,7 @@ const Questions = ({ questions, loading }) => {
                           anchorEl={anchor} 
                         >
                           <Typography variant='h6' className='option-popper' >  {option.isPrompt} </Typography>
+                          <Button variant="contained" color='primary' >OK</Button>
                         </Popper>
                       </div>
                     )
