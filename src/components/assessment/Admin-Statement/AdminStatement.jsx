@@ -3,7 +3,7 @@ import './adminStatement.css'
 import { Button, TextField, Dialog, DialogActions, DialogContent, DialogTitle, TextareaAutosize, Typography } from '@material-ui/core'
 import { useState } from 'react';
 import CustomPaginationActionsTable from './Table';
-import useFetch from '../../Custom Hook/useFetch';
+import useFetch from '../Custom Hook/useFetch';
 import IconButton from '@mui/material/IconButton';
 import Tooltip from '@mui/material/Tooltip';
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';

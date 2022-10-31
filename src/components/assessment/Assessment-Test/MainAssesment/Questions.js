@@ -30,7 +30,7 @@ const Questions = ({ questions, loading }) => {
 
   return (
     // <div className='row px-3 '>
-    <form className='col-md-12 px-3 question-form ' >
+    <form className='content-wrapper px-3 question-form ' >
       {
         questions.map((question, i) => {
           return (
@@ -108,7 +108,7 @@ const Questions = ({ questions, loading }) => {
                             width:"600px",
                             color:"blue",
                             fontWeight:"bolder",
-                            marginLeft:"420px",
+                            marginLeft:"250px",
                             marginTop:"2px",
                             boxShadow:"4px 2px 2px 2px rgba(0,0,0,0.25), -4px 2px 2px 2px rgba(0,0,0,0.25)",
                             padding:"10px"

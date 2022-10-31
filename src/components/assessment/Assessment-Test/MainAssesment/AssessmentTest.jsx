@@ -6,7 +6,7 @@ import './assessTest.css'
 import Questions from "./Questions";
 import Pagination from "../PaginationFile/Pagination";
 import Timer from "./Timer";
-import useFetch from "../../../Custom Hook/useFetch";
+import useFetch from "../../Custom Hook/useFetch";
 // import ReactPaginate from 'react-paginate'
 import CircularProgress from '@mui/material/CircularProgress';
 
@@ -51,15 +51,15 @@ const AssessmentTest = () => {
   
 
   return (
-    <div className="assessment-test">
-        <div className='header'>
+    <div className="content-wrapper assessment-test">
+        <div className='header w-100'>
             <h1>Assesment Test</h1>
             <div className='pageNo-Timer'>
                 <h3> Question {indeOfFirstQues+1} of {questions.length}</h3>
                 <Timer/>
             </div>
         </div>
-        <div className=" row questionWithOption" >
+        <div className="content-wrapper row questionWithOption" >
           <Questions questions={currentQueston} loading={loading} />
 
           <Pagination 

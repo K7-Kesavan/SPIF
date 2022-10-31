@@ -6,8 +6,7 @@
     box-sizing: border-box;
 }
 .assessment-test{
-    width: 100%;
-    display: grid;
+    /* display: grid; */
     justify-content: center;
     padding: 0%;
 }
@@ -16,7 +15,6 @@
     color: aliceblue;
     padding: 10px 0;
     height: 100px;
-    width: 100%;
     
 }
 .assessment-test .header h1{
@@ -27,11 +25,11 @@
     display: flex;
     justify-content: space-around;
 }
-.question-form{
+/* .question-form{
     position: relative;
-}
+} */
 .question{
-    width: 1200px;
+    /* width: max-content; */
     text-align: start;
     opacity: 0.9;
 }
@@ -66,9 +64,9 @@
 .question-label{
     opacity: 0.9;
 }
-.question-form{
+/* .question-form{
     position: static;
-}
+} */
 .question-form .btn{
     position: absolute;
     width: 200px;
