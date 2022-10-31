@@ -66,21 +66,25 @@ const Questions = ({ questions, loading }) => {
 
                     const open = Boolean(anchor);
 
-                    // const onSelect = ( ) =>{
+                    const onSelect = () =>{
 
-                    //   let LinalArray = [] ;  let arrayUniqueByKey = [];
+                      
 
-                    //   LinalArray = LinalArray.push( { 'stid': question.sStatementID, 'answers': option.text } );
+                      let newArrays = JSON.parse(localStorage.getItem("item") || '[]' )
+                      
+                      let newArray = {'stid': question.sStatementID, 'answers': option.text,}
 
-                    //   let Key = 'stid';
+                      newArrays.push( newArray);
 
-                    //   arrayUniqueByKey = [ ...new Map( LinalArray.map( item=> [item[Key],item])).values() ]
+                      // let Key = 'stid';
 
-                    //   localStorage.setItem("item", JSON.stringify(arrayUniqueByKey));
+                      // arrayUniqueByKey = [ ...new Map( LinalArray.map( item=> [item[Key],item])).values() ]
+                      
+                      localStorage.setItem("item", JSON.stringify(newArrays));
 
-                    //   localStorage.getItem("item");
+                      
 
-                    // }
+                    }
 
                     return (
                       <div className="question-options">
@@ -88,7 +92,7 @@ const Questions = ({ questions, loading }) => {
                         <input type="radio"
                           name={question.sStatementID}
                           value={option.text}
-                          onChange={ (e)=>{ setAnswers(e.target.value) } }
+                          onChange={ (e)=>{ setAnswers(e.target.value); onSelect() } }
                           onClick={openPopover}
                         />
                         <label className='px-1 question-label' > {option.text} </label>
