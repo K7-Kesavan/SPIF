@@ -7,10 +7,10 @@ const Questions = ({ questions, loading }) => {
 
   const [answers, setAnswers] = useState("");
 
-  const [open, setOpen] = useState(false);
+  // const [open, setOpen] = useState(false);
   // const [score, setScore] = useState(0);
   useEffect(()=>{
-    if(localStorage.getItem("item")==null)  //if wish array is not presnt before 
+    if(localStorage.getItem("item")==null)  //if item array is not present before 
     {
         localStorage.setItem("item","[]")   //then add the wish
     }
@@ -48,11 +48,7 @@ const Questions = ({ questions, loading }) => {
 
                 }
                 {
-                  question.options.map((option) => { 
-                    
-                    question.options.forEach( (x)=>{
-                      if( x.id != option.id ) x.selected = false;
-                    } )
+                  question.options.map((option) => {                    
                     
                     const openPopover = (event) =>{
                       if (option.isAnswer === false) {
@@ -94,7 +90,6 @@ const Questions = ({ questions, loading }) => {
                           value={option.text}
                           onChange={ (e)=>{ setAnswers(e.target.value) } }
                           onClick={openPopover}
-                          onClose={handleClose}
                         />
                         <label className='px-1 question-label' > {option.text} </label>
                         
@@ -114,13 +109,13 @@ const Questions = ({ questions, loading }) => {
                             padding:"10px"
                           }} 
                           open={open}
-                          anchorEl={anchor} 
+                          anchorEl={anchor}
                         >
                           <div className='option-popper-title'>    
                             <Typography variant='h5'  >  The Reason for wrong answer </Typography>
                           </div>
                           <hr />
-                          <Typography variant='h6' className='option-popper' >  {option.isPrompt} </Typography>
+                          <Typography variant='h6' className='option-popper' > {option.isPrompt} </Typography>
                           <div className='popper-btn'>
                             
                             <Button onClick={handleClose} variant="contained" color='primary' >OK</Button>
