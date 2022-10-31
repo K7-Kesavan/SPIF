@@ -81,10 +81,13 @@
 .multi-q-details p{
     font-size: larger;
 }
-.question-options .option-popper{
-    background-color: rgb(57, 87, 114);
-    width: 200px;
-    box-shadow: 6px 7px 5px 0px rgba(130,108,108,0.66);
-    -webkit-box-shadow: 6px 7px 5px 0px rgba(130,108,108,0.66);
-    -moz-box-shadow: 6px 7px 5px 0px rgba(130,108,108,0.66);
+.option-popper-title{
+    display: flex;
+    justify-content: center;
+    color: black;
+}
+.popper-btn{
+    display: flex;
+    justify-content: flex-end;
+    margin: 5px 5px;
 }

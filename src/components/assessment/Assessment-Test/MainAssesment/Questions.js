@@ -106,18 +106,26 @@ const Questions = ({ questions, loading }) => {
                             backgroundColor:"white",
                             borderRadius:"20px",
                             width:"600px",
-                            color:"blue",
+                            color:"black",
                             fontWeight:"bolder",
-                            // marginLeft:"250px",
+                            marginLeft:"250px",
                             marginTop:"2px",
-                            boxShadow:"4px 2px 2px 2px rgba(0,0,0,0.25), -4px 2px 2px 2px rgba(0,0,0,0.25)",
+                            boxShadow:"4px 2px 1px 2px rgba(0,0,0,0.25), -4px 2px 1px 2px rgba(0,0,0,0.25)",
                             padding:"10px"
                           }} 
                           open={open}
                           anchorEl={anchor} 
                         >
+                          <div className='option-popper-title'>    
+                            <Typography variant='h5'  >  The Reason for wrong answer </Typography>
+                          </div>
+                          <hr />
                           <Typography variant='h6' className='option-popper' >  {option.isPrompt} </Typography>
-                          <Button variant="contained" color='primary' >OK</Button>
+                          <div className='popper-btn'>
+                            
+                            <Button onClick={handleClose} variant="contained" color='primary' >OK</Button>
+                          
+                          </div>
                         </Popper>
                       </div>
                     )
