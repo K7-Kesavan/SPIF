@@ -5,7 +5,7 @@ import { useState } from 'react';
 
 const TermsConditions = () => {
 
-  let [num, setNum] = useState("CLICK TO START");
+  let [num, setNum] = useState("START THE TEST");
 
   let handleButton = ()=>{
 
@@ -42,7 +42,7 @@ const TermsConditions = () => {
 
             <Link to='/assessment-test'>
               <button onClick={{handleButton} }
-              type="button" class="btn btn-primary"> {num} </button>
+              type="button" class="btn"> {num} </button>
             </Link>
 
           </div>
