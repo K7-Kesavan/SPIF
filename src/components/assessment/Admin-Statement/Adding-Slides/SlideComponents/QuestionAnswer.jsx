@@ -5,10 +5,10 @@ import AddIcon from '@mui/icons-material/Add';
 import { Button, TextField } from '@material-ui/core'
 
 
-const QuestionAnswer = () => {
-  return (
-    <div>
+const QuestionAnswer = ( { setOpen, setOpenQA, setTitle } ) => {
+    return (
         <div>
+            <div>
                 <h5> Statement </h5>
                 <TextareaAutosize
                     maxRows={4}
@@ -38,8 +38,13 @@ const QuestionAnswer = () => {
                     </div>
                 </div>
             </div>
-    </div>
-  )
+            <div className='tab-body-btns'>
+                    <Button variant='contained' color='primary' onClick={() => { setOpen(false); setOpenQA(true); setTitle("Statement Manager") }}>
+                        ADD
+                    </Button>
+            </div>
+        </div>
+    )
 }
 
 export default QuestionAnswer

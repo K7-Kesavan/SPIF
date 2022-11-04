@@ -29,21 +29,15 @@ const AddSLides = ({ setOpen, setOpenQA, setTitle }) => {
 
     const renderSlideContent = ()=>{
 
-        
-
         switch (dropDownVal) 
         {
-            case 1: return  <QuestionAnswer/> ;
+            case 1: return  <QuestionAnswer setOpen={setOpen} setOpenQA={setOpenQA} setTitle={setTitle} /> ;
                 break;   
             default:
                 break;
         }
 
     }
-
-    
-
-
 
     return (
         <div className='row p-0'>
@@ -59,12 +53,6 @@ const AddSLides = ({ setOpen, setOpenQA, setTitle }) => {
                 </div>
 
                 { renderSlideContent() }
-
-                <div className='tab-body-btns'>
-                    <Button variant='contained' color='primary' onClick={() => { setOpen(false); setOpenQA(true); setTitle("Statement Manager") }}>
-                        ADD
-                    </Button>
-                </div>
             </div>
         </div>
     )
