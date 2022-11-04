@@ -1,60 +1,76 @@
 import React from 'react'
-import { Button} from '@material-ui/core'
-import TextareaAutosize from '@mui/material/TextareaAutosize';
-import IconButton from '@mui/material/IconButton';
+import { Button, TextField } from '@material-ui/core'
+
 import './AddSlides.css'
 
-import AddIcon from '@mui/icons-material/Add';
+import { useState } from 'react';
+import Select from 'react-select'
+import QuestionAnswer from './SlideComponents/QuestionAnswer';
 
-const AddSLides = ({ setOpen, setOpenQA }) => {
+const AddSLides = ({ setOpen, setOpenQA, setTitle }) => {
+
+    
+    
+    const slideComponents = [
+        { label : "Q/A", value : 1 },
+        { label : "Para", value : 2 },
+        { label : "ParaWithImage", value : 3 },
+        { label : "Image", value : 4 },
+        { label : "Video", value : 5 },
+        { label : "Audio", value : 6 }
+    ]
+    
+    const [ dropDownVal, setDropDownVal] = useState(  slideComponents.value )
+
+    const handleChange = (e) =>{
+        setDropDownVal(e.value);
+     }
+
+
+    const renderSlideContent = ()=>{
+
+        
+
+        switch (dropDownVal) 
+        {
+            case 1: return  <QuestionAnswer/> ;
+                break;   
+            default:
+                break;
+        }
+
+    }
+
+    
+
 
 
     return (
-        <div className='content-wrapper w-100'>
-            <div className="content">
-                <div >
-                    <div>
-                        <div>
-                            <h5> Statement </h5>
-                            <TextareaAutosize
-                                maxRows={4}
-                                aria-label="maximum height"
-                                placeholder='Enter Your Statement'
-                                style={{ width: '100%', height: "150px", padding: "10px", outline: "none", border: "1px solid rgba(55, 59, 59, 0.2)", borderRadius: "5px" }}
-                            />
-                        </div>
-                        <hr />
-                        <div>
-                            <h5> Options </h5>
-                            <div className='options-container'>
+        <div className='row p-0'>
+            <div className="col-12  content">
+                <div className='slide-summary'>
+                    <h3>Choose Your Slide</h3>
+                    <Select className='select-slides' 
+                            defaultValue="Select Slides"  
+                            options={slideComponents} 
+                            onChange={ handleChange } 
+                    />
+                    <h1> { dropDownVal } </h1>
+                </div>
 
-                                <TextareaAutosize
-                                    maxRows={4}
-                                    aria-label="maximum height"
-                                    placeholder='Enter Your Option'
-                                    style={{ width: '100%', padding: "10px", outline: "none", border: "1px solid rgba(55, 59, 59, 0.2)", borderRadius: "5px" }}
-                                />
-                                <div>
-                                    <Button className='option-add-btn' style={{ width: "150px", height: "40px" }} variant="outlined" color='success'>
-                                        <IconButton>
-                                            <AddIcon fontSize='small' style={{ color: "gray" }} />
-                                        </IconButton>
-                                        Add Option
-                                    </Button>
-                                </div>
-                            </div>
-                        </div>
-                        <div className='tab-body-btns'>
-                            <Button variant='contained' color='primary' onClick={() => { setOpen(false); setOpenQA(true) }}>
-                                ADD
-                            </Button>
-                        </div>
-                    </div>
+                { renderSlideContent() }
 
+                <div className='tab-body-btns'>
+                    <Button variant='contained' color='primary' onClick={() => { setOpen(false); setOpenQA(true); setTitle("Statement Manager") }}>
+                        ADD
+                    </Button>
                 </div>
             </div>
         </div>
     )
+
+    
 }
+
 
 export default AddSLides

@@ -17,9 +17,12 @@ const AdminStatement = () => {
 
     const [openQA, setOpenQA] = useState(true);
 
+    const [ title, setTitle ] = useState("Statement Manager")
+
     const handleClickOpen = () => {
         setOpen(true);
         setOpenQA(false);
+        setTitle("Question Manager");
     };
 
     // const handleClose = () => {
@@ -40,16 +43,18 @@ const AdminStatement = () => {
                 <div className=' p-3 question-container'>
                     <div className='adding-part'>
                         <h3 style={{ fontSize: "25px", fontWeight: "bolder", letterSpacing: "1px" }}>
-                            Statement Manager
+                            {title}
                         </h3>
                 
-                        <Button style={{ width: "250px", height: "40px", 
+                        { openQA &&
+                            <Button style={{ width: "250px", height: "40px", 
                                          backgroundColor:"#00ad53", color:"white", 
                                          fontWeight:"800", letterSpacing:"1px", fontSize:"17px" }} 
                                 onClick={handleClickOpen}
-                        >
-                            ADD SLIDES
-                        </Button>
+                            >
+                                ADD SLIDES
+                            </Button>
+                        }
                         
                     </div>
                     
@@ -64,7 +69,7 @@ const AdminStatement = () => {
 
                     {/* <CustomPaginationActionsTable questions={questions} totalQuestions={questions.length} /> */}
                     { 
-                        open && <AddSLides setOpen={setOpen} setOpenQA={setOpenQA}/> 
+                        open && <AddSLides setOpen={setOpen} setOpenQA={setOpenQA} setTitle={ setTitle } /> 
                     }
                     {
                         openQA && <AdminQuestionDetails questions={questions} />

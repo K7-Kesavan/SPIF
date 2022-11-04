@@ -1,7 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react';
-import MaterialLayout from './components/Layout/MaterialLayout';
-import CheckoutPage from './components/CheckoutPage';
 import TermsConditions from './components/assessment/Assessment-Test/Terms & Condions/Terms_Conditions';
 import {BrowserRouter as Router, Routes, Route, Switch} from 'react-router-dom'
 import AssessmentTest from './components/assessment/Assessment-Test/MainAssesment/AssessmentTest';
@@ -13,9 +10,6 @@ import CertificationPage from './components/assessment/Assessment-Test/TestCompl
 function App() {
   return (
       <Router>
-          {/* <MaterialLayout> 
-            <CheckoutPage />
-          </MaterialLayout> */}
           <Switch>
 
               <Route exact='/' >

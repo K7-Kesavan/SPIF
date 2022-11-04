@@ -3,6 +3,7 @@ import { useState } from 'react'
 import './tabs.css'
 import TextareaAutosize from '@mui/material/TextareaAutosize';
 import IconButton from '@mui/material/IconButton';
+import DeleteIcon from '@mui/icons-material/Delete';
 
 import AddIcon from '@mui/icons-material/Add';
 import { Button } from '@material-ui/core'
@@ -13,6 +14,25 @@ const Tabs = ({ questions }) => {
 
     let handleTabClick = (e) => {
         setCurrentTab(e.target.id)
+    }
+
+    let [textField, setTextField] = useState([])
+
+    const handleAdd = () => {
+        const abc = [...textField, []];
+        setTextField(abc);
+    }
+
+    const handleChange = (onChangeValue, i) => {
+        const inputData = [...textField];
+        inputData[i] = onChangeValue.target.value;
+        setTextField(inputData)
+    }
+
+    const handleDelete = (i) => {
+        const delVal = [...textField];
+        delVal.splice(i, 1);
+        setTextField(delVal)
     }
 
     return (
@@ -43,8 +63,9 @@ const Tabs = ({ questions }) => {
                                             maxRows={4}
                                             aria-label="maximum height"
                                             defaultValue={tab.sDescription}
-                                            style={{ width: '100%', height:"150px", padding: "10px", outline:"none", border:"1px solid rgba(55, 59, 59, 0.2)", borderRadius:"5px" }}
-                                            />
+                                            style={{ width: '100%', height: "150px", padding: "10px", outline: "none", border: "1px solid rgba(55, 59, 59, 0.2)", borderRadius: "5px" }}
+                                        />
+
                                     </div>
                                     <hr />
                                     <div>
@@ -52,18 +73,42 @@ const Tabs = ({ questions }) => {
                                         <div className='options-container'>
                                             {
                                                 tab.options.map((option, i) =>
-
-                                                    <TextareaAutosize
-                                                        maxRows={4}
-                                                        aria-label="maximum height"
-                                                        defaultValue={option.text}
-                                                        style={{ width: '100%', padding: "10px", outline:"none", border:"1px solid rgba(55, 59, 59, 0.2)", borderRadius:"5px" }}
-                                                    />
+                                                    <div className='option-field'>
+                                                        <TextareaAutosize
+                                                            maxRows={4}
+                                                            aria-label="maximum height"
+                                                            defaultValue={option.text}
+                                                            style={{ width: '100%', padding: "10px", outline: "none", border: "1px solid rgba(55, 59, 59, 0.2)", borderRadius: "5px" }}
+                                                        />
+                                                        <button onClick={() => { handleDelete(i) }} >
+                                                            <DeleteIcon/>
+                                                        </button>
+                                                    </div>
                                                 )
 
                                             }
+                                            {
+                                                textField.map((data, i) =>
+                                                    <div className='option-field'>
+                                                        <TextareaAutosize
+                                                            maxRows={4}
+                                                            aria-label="maximum height"
+                                                            defaultValue={data}
+                                                            placeholder='Enter a Value'
+                                                            style={{ width: '100%', padding: "10px", outline: "none", border: "1px solid rgba(55, 59, 59, 0.2)", borderRadius: "5px" }}
+                                                            onChange={e => handleChange(e, i)}
+                                                        />
+                                                        <button onClick={() => { handleDelete(i) }} >
+                                                            <DeleteIcon/>
+                                                        </button>
+                                                    </div>
+                                                )
+                                            }
                                             <div>
-                                                <Button className='option-add-btn' style={{ width: "150px", height: "40px" }} variant="outlined" color='success'>
+                                                <Button className='option-add-btn' style={{ width: "150px", height: "40px" }}
+                                                    variant="outlined" color='success'
+                                                    onClick={() => handleAdd()}
+                                                >
                                                     <IconButton>
                                                         <AddIcon fontSize='small' style={{ color: "gray" }} />
                                                     </IconButton>

@@ -37,3 +37,16 @@
     border: 1px solid #00ad53;
     color:  #00ad53 ;
 }
+.options-container .option-field{
+    display: flex;
+    margin: 10px 0;
+}
+.options-container .option-field button{
+    width: 50px;
+    margin: 0 5px;
+    border: 0.5px solid rgba(55, 59, 59, 0.5);
+    border-radius: 5px;
+    font-weight: bolder;
+    background-color: #57C272;
+    color: antiquewhite;
+}
