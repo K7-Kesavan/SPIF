@@ -22,7 +22,7 @@ const AdminStatement = () => {
     const handleClickOpen = () => {
         setOpen(true);
         setOpenQA(false);
-        setTitle("Question Manager");
+        setTitle("Slide Manager");
     };
 
     // const handleClose = () => {
