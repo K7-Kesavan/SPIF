@@ -152,7 +152,7 @@ const Tabs = ({ questions }) => {
                                                             {
                                                                 option.isAnswer === false &&
                                                                 <div className='prompt-field'>
-                                                                    <Typography style={ { color:"#62C2CF" } }>The Prompt For Wrong Answer</Typography>
+                                                                    <Typography style={ { color:"#62C2CF" } }>Prompt For Wrong Answer</Typography>
                                                                     <TextareaAutosize
                                                                     maxRows={4}
                                                                     aria-label="maximum height"
@@ -161,7 +161,7 @@ const Tabs = ({ questions }) => {
                                                                     />
                                                                 </div>                                           
                                                             }
-                                                            <button onClick={() => { handleDelete(i) }} >
+                                                            <button style={{ height:"50px" }} onClick={() => { handleDelete(i) }} >
                                                                 <DeleteIcon />
                                                             </button>
                                                         </div>

@@ -2,7 +2,7 @@ import React from 'react'
 import TextareaAutosize from '@mui/material/TextareaAutosize';
 import IconButton from '@mui/material/IconButton';
 import AddIcon from '@mui/icons-material/Add';
-import { Button } from '@material-ui/core'
+import { Button, Typography } from '@material-ui/core'
 import { useState } from 'react';
 import DeleteIcon from '@mui/icons-material/Delete';
 
@@ -52,13 +52,27 @@ const QuestionAnswer = ({ setOpen, setOpenQA, setTitle }) => {
                                     maxRows={4}
                                     aria-label="maximum height"
                                     defaultValue={data}
-                                    placeholder='Enter a Value'
+                                    placeholder='Enter a Option Value'
                                     style={{ width: '100%', padding: "10px", outline: "none", border: "1px solid rgba(55, 59, 59, 0.2)", borderRadius: "5px" }}
                                     onChange={e => handleChange(e, i)}
                                 />
-                                <button onClick={() => { handleDelete(i) }} >
-                                    <DeleteIcon />
-                                </button>
+                                <div className='row justify-content-center align-items-center' style={ { border:"#57C272 1px dotted", width:"75%", margin:"auto" } }>
+                                    <div className='col-10' >
+                                        <Typography style={ { color:"#62C2CF" } }> Prompt for Wrong Answer </Typography>
+                                        
+                                        <TextareaAutosize
+                                            maxRows={4}
+                                            aria-label="maximum height"
+                                            defaultValue={data}
+                                            placeholder='Enter the prompt'
+                                            style={{ width: '100%', padding: "10px", outline: "none", border: "1px solid rgba(55, 59, 59, 0.2)", borderRadius: "5px" }}
+                                            onChange={e => handleChange(e, i)}
+                                        />
+                                    </div>
+                                    <button className='col-2 h-50' onClick={() => { handleDelete(i) }} >
+                                        <DeleteIcon />
+                                    </button>
+                                </div>
                             </div>
                         )
                     }
