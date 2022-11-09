@@ -40,6 +40,7 @@
 }
 .options-container .option-field{
     display: flex;
+    flex-direction: column;
     margin: 10px 0;
 }
 .options-container .option-field button{
@@ -55,4 +56,12 @@
     display: inline-flex;
     width: 70px;
     position: relative;
+}
+.prompt-field{
+    border: #57C272 1px dotted;
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
 }
