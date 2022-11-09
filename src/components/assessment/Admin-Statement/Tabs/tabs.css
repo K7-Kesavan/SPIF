@@ -1,3 +1,4 @@
+
 .tabTypeQuestion .tab button{
     padding: 5px;
     border: none;
@@ -49,4 +50,9 @@
     font-weight: bolder;
     background-color: #57C272;
     color: antiquewhite;
+}
+.draggable-tab{
+    display: inline-flex;
+    width: 70px;
+    position: relative;
 }

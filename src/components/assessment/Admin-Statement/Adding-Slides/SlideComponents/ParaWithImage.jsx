@@ -1,8 +1,6 @@
 import React from 'react'
 import TextareaAutosize from '@mui/material/TextareaAutosize';
-import IconButton from '@mui/material/IconButton';
-import AddIcon from '@mui/icons-material/Add';
-import { Button, TextField } from '@material-ui/core'
+import { Button} from '@material-ui/core'
 
 const ParaWithImage = ({ setOpen, setOpenQA, setTitle }) => {
     return (

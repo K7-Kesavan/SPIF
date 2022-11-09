@@ -4,9 +4,9 @@ import './tabs.css'
 import TextareaAutosize from '@mui/material/TextareaAutosize';
 import IconButton from '@mui/material/IconButton';
 import DeleteIcon from '@mui/icons-material/Delete';
-
 import AddIcon from '@mui/icons-material/Add';
 import { Button } from '@material-ui/core'
+import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd'
 
 const Tabs = ({ questions }) => {
 
@@ -19,8 +19,8 @@ const Tabs = ({ questions }) => {
     let [textField, setTextField] = useState([])
 
     const handleAdd = () => {
-        const abc = [...textField, []];
-        setTextField(abc);
+        const addOption = [...textField, []];
+        setTextField(addOption);
     }
 
     const handleChange = (onChangeValue, i) => {
@@ -35,10 +35,78 @@ const Tabs = ({ questions }) => {
         setTextField(delVal)
     }
 
+    const [list, setList] = useState(questions)
+
+    const reorder = (list, startIndex, endIndex) => {
+        const result = Array.from(list);
+        const [removed] = result.splice(startIndex, 1);
+
+        result.splice(endIndex, 0, removed);
+
+        return result;
+    }
+
+
+    const onEnd = (result) => {
+        // console.log(result);
+
+        let sourceIndex = result.source.index;
+
+        let destinationIndex = result.destination.index;
+
+        setList(reorder(list, sourceIndex, destinationIndex));
+    }
+
     return (
         <div className='container tabTypeQuestion'>
             <div className="tab">
-                {
+                <DragDropContext onDragEnd={onEnd} >
+                    <Droppable
+                        droppableId='12345'
+                        direction='horizontal'
+                    >
+                        {(provider, snapshot) => {
+                            return (
+                                <div
+                                    ref={provider.innerRef}
+                                >
+                                    {
+                                        list.map((question, index) => {
+                                            return (
+                                                <Draggable
+                                                    draggableId={question.sStatementID}
+                                                    key={question.sStatementID}
+                                                    index={index}
+                                                >
+                                                    {(provider, snapshot) => {
+                                                        return (
+                                                            <div
+                                                                ref={provider.innerRef}
+                                                                {...provider.draggableProps}
+                                                                {...provider.dragHandleProps}
+                                                                className='draggable-tab'
+                                                            >
+                                                                <button
+                                                                    key={index} id={question.sStatementID}
+                                                                    disabled={currentTab === `${question.sStatementID}`}
+                                                                    onClick={handleTabClick}                                                         
+                                                                >
+                                                                    Slide <span> {index + 1} </span>
+                                                                </button>
+                                                            </div>
+                                                        )
+                                                    }}
+                                                </Draggable>
+                                            )
+                                        })
+                                    }
+                                    {provider.placeholder}
+                                </div>
+                            )
+                        }}
+                    </Droppable>
+                </DragDropContext>
+                {/* {
                     questions.map((tab, i) =>
                         <button
                             key={i} id={tab.sStatementID}
@@ -48,7 +116,7 @@ const Tabs = ({ questions }) => {
                             Slide <span> {i + 1} </span>
                         </button>
                     )
-                }
+                } */}
             </div>
             <div className="content">
                 {
@@ -81,13 +149,13 @@ const Tabs = ({ questions }) => {
                                                             style={{ width: '100%', padding: "10px", outline: "none", border: "1px solid rgba(55, 59, 59, 0.2)", borderRadius: "5px" }}
                                                         />
                                                         <button onClick={() => { handleDelete(i) }} >
-                                                            <DeleteIcon/>
+                                                            <DeleteIcon />
                                                         </button>
                                                     </div>
                                                 )
 
                                             }
-                                            {
+                                            { 
                                                 textField.map((data, i) =>
                                                     <div className='option-field'>
                                                         <TextareaAutosize
@@ -97,9 +165,10 @@ const Tabs = ({ questions }) => {
                                                             placeholder='Enter a Value'
                                                             style={{ width: '100%', padding: "10px", outline: "none", border: "1px solid rgba(55, 59, 59, 0.2)", borderRadius: "5px" }}
                                                             onChange={e => handleChange(e, i)}
+                                                            tabIndex={i}
                                                         />
                                                         <button onClick={() => { handleDelete(i) }} >
-                                                            <DeleteIcon/>
+                                                            <DeleteIcon />
                                                         </button>
                                                     </div>
                                                 )

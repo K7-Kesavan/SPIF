@@ -2,7 +2,7 @@ import React from 'react'
 import Tooltip from '@mui/material/Tooltip';
 import { Button } from '@material-ui/core';
 import {saveAs} from 'file-saver'
-import { useHistory, useNavigate } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 
 const CertificationPage = () => {
 

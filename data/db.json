@@ -518,7 +518,7 @@
             "options": [],
             "sInactive": false,
             "media": false,
-            "order": null
+            "order": 15
         },
         {
             "sStatementID": "STID00000016",
@@ -596,7 +596,7 @@
             ],
             "sInactive": false,
             "media": false,
-            "order": 15
+            "order": 16
         },
         {
             "sStatementID": "STID00000017",
@@ -675,10 +675,10 @@
             ],
             "sInactive": false,
             "media": false,
-            "order": 16
+            "order": 17
         },
         {
-            "sStatementID": "STID00000017",
+            "sStatementID": "STID00000018",
             "sDescription": "What are the protective factors in the above scenario?",
             "sText": null,
             "sImage": null,
@@ -703,7 +703,6 @@
                     "value": 4,
                     "isAnswer": false,
                     "isPrompt":"Warning signs are usually verbal, behavioural or emotional signs that indicate a person may be distressed. Risk factors are usually things in a person’s environment, usually out of their control, that make them vulnerable."
-
                 },
                 {
                     "id": 44,
@@ -723,12 +722,11 @@
                     "value": 1,
                     "isAnswer": false,
                     "isPrompt":"Warning signs are usually verbal, behavioural or emotional signs that indicate a person may be distressed. Risk factors are usually things in a person’s environment, usually out of their control, that make them vulnerable."
-
                 }
             ],
             "sInactive": false,
             "media": false,
-            "order": 17
+            "order": 18
         }
     ]
 }

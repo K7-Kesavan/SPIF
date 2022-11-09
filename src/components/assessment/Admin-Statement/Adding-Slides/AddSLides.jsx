@@ -46,21 +46,20 @@ const AddSLides = ({ setOpen, setOpenQA, setTitle }) => {
                 break;
             case 6: return  <OnlyAudio setOpen={setOpen} setOpenQA={setOpenQA} setTitle={setTitle} /> ;
                 break;       
-            default: 
+            default: return <QuestionAnswer setOpen={setOpen} setOpenQA={setOpenQA} setTitle={setTitle} /> ; 
                 break;
         }
-
     }
 
     return (
         <div className='row p-0'>
             <div className="col-12  content">
                 <div className='slide-summary'>
-                    <h3>Choose Your Slide</h3>
+                    <h4>Choose Your Slide</h4>
                     <Select className='select-slides' 
-                            defaultValue="Select Slides"  
                             options={slideComponents} 
-                            onChange={ handleChange } 
+                            onChange={ handleChange }
+                            placeholder={slideComponents[0].label}
                     />
                 </div>
 
@@ -68,8 +67,7 @@ const AddSLides = ({ setOpen, setOpenQA, setTitle }) => {
             </div>
         </div>
     )
-
-    
+   
 }
 
 
