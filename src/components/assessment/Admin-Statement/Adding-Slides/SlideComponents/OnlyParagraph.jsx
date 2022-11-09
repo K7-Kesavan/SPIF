@@ -5,7 +5,7 @@ import { Button } from '@material-ui/core'
 const OnlyParagraph = ({ setOpen, setOpenQA, setTitle }) => {
     return (
         <div>
-            <div>
+            <div className='para-stmt'>
                 <h5> Statement </h5>
                 <TextareaAutosize
                     maxRows={4}

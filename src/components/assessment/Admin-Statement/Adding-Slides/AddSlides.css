@@ -18,7 +18,7 @@
 }
 .content .slide-summary{
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
     height: 100px;
 }
@@ -43,4 +43,30 @@
 .slide-summary .select-slides{
     width: 300px;
     color: #00ad53;
+}
+.file-input-img, .file-input-vdo{
+    border: #00ad53 1px dotted;
+    height: 200px;
+    width: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+.file-input-img input{
+    width: 100%;
+    margin-left: 20px;
+}
+.file-input-vdo input{
+    width: 100%;
+    margin-left: 20px;
+}
+.para-stmt h5{
+    color: #00ad53;
+}
+.para-img,.para-vdo label{
+    color: #00ad53;
+}
+.para-img, .para-vdo{
+    text-align: center;
 }

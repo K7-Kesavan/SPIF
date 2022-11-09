@@ -6,8 +6,8 @@ import { Button, TextField } from '@material-ui/core'
 
 const ParaWithImage = ({ setOpen, setOpenQA, setTitle }) => {
     return (
-        <div>
-            <div>
+        <div className='para-with-image'>
+            <div className='para-stmt'>
                 <h5> Statement </h5>
                 <TextareaAutosize
                     maxRows={4}
@@ -17,9 +17,11 @@ const ParaWithImage = ({ setOpen, setOpenQA, setTitle }) => {
                 />
             </div>
             <hr />
-            <div>
-                <label htmlFor="slideIMG">Upload the Image</label>
-                <input id='slideIMG' accept=" image/png, image/jpeg  " type="file" />
+            <div className='para-img' >
+                <label>Upload the Image</label>
+                <div className='file-input-img'>
+                    <input id='slideIMG' accept=" image/png, image/jpeg  " type="file" />
+                </div>
             </div>
             <div className='tab-body-btns'>
                 <Button variant='contained' color='primary' onClick={() => { setOpen(false); setOpenQA(true); setTitle("Statement Manager") }}>

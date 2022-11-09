@@ -6,6 +6,9 @@ import Select from 'react-select'
 import QuestionAnswer from './SlideComponents/QuestionAnswer';
 import OnlyParagraph from './SlideComponents/OnlyParagraph';
 import ParaWithImage from './SlideComponents/ParaWithImage';
+import OnlyImage from './SlideComponents/OnlyImage';
+import OnlyVideo from './SlideComponents/OnlyVideo';
+import OnlyAudio from './SlideComponents/OnlyAudio';
 
 const AddSLides = ({ setOpen, setOpenQA, setTitle }) => {
 
@@ -36,8 +39,14 @@ const AddSLides = ({ setOpen, setOpenQA, setTitle }) => {
             case 2: return  <OnlyParagraph setOpen={setOpen} setOpenQA={setOpenQA} setTitle={setTitle} /> ;
                 break;
             case 3: return  <ParaWithImage setOpen={setOpen} setOpenQA={setOpenQA} setTitle={setTitle} /> ;
-                break;     
-            default:
+                break;
+            case 4: return  <OnlyImage setOpen={setOpen} setOpenQA={setOpenQA} setTitle={setTitle} /> ;
+                break;
+            case 5: return  <OnlyVideo setOpen={setOpen} setOpenQA={setOpenQA} setTitle={setTitle} /> ;
+                break;
+            case 6: return  <OnlyAudio setOpen={setOpen} setOpenQA={setOpenQA} setTitle={setTitle} /> ;
+                break;       
+            default: 
                 break;
         }
 
