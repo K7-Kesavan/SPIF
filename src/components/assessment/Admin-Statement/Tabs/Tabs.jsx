@@ -135,6 +135,7 @@ const Tabs = ({ questions }) => {
                                         />
                                     </div>
                                     <hr />
+                                    { tab.options.length != 0 &&
                                     <div>
                                         <h5> Options </h5>
                                         <div className='options-container'>
@@ -205,6 +206,7 @@ const Tabs = ({ questions }) => {
                                             </div>
                                         </div>
                                     </div>
+                                    }
                                     <div className='tab-body-btns'>
                                         <button className='btn btn-primary' >
                                             SAVE
@@ -216,6 +218,7 @@ const Tabs = ({ questions }) => {
                                 </div>
                             }
                         </div>
+
                     )
                 }
             </div>
